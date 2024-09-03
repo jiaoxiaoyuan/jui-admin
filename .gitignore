@@ -2,3 +2,5 @@
 #
 .DS_Store
 
+app/package-lock.json
+app/yarn.lock
