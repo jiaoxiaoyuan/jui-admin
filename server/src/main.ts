@@ -14,16 +14,7 @@ async function bootstrap() {
         cors: true,
     });
 
-    // const options = new DocumentBuilder()
-    //     .addBearerAuth() // token
-    //     .setTitle('Cats API')
-    //     .setDescription('The cats API description')
-    //     .setVersion('1.0')
-    //     .build();
-
-    // const document = SwaggerModule.createDocument(app, options);
-    // SwaggerModule.setup('/api-doc', app, document);
-
+    //  app.setGlobalPrefix('api'); // 配置全局前缀
     // 注册 Swagger 的配置顺序
     setupSwagger(app);
 
