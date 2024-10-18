@@ -1,4 +1,4 @@
-import type { NestExpressApplication } from '@nestjs/platform-express';
+import type  { NestExpressApplication } from '@nestjs/platform-express';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 export const setupSwagger = (app: NestExpressApplication) => {
