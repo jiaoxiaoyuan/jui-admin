@@ -4,15 +4,22 @@ import { AppModule } from './app.module';
 import type { NestExpressApplication } from '@nestjs/platform-express';
 import { ExpressAdapter } from '@nestjs/platform-express';
 
+import { ValidationPipe } from '@nestjs/common';
+
+
 // import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 import { setupSwagger } from './swagger';
 
-async function bootstrap() {
+async function bootstrap () {
     // const app = await NestFactory.create(AppModule);
     const app = await NestFactory.create<NestExpressApplication>(AppModule, new ExpressAdapter(), {
         cors: true,
     });
+
+    // 全局管道
+    app.useGlobalPipes(new ValidationPipe());
+
 
     //  app.setGlobalPrefix('api'); // 配置全局前缀
     // 注册 Swagger 的配置顺序
