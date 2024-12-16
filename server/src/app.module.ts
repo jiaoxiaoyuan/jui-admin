@@ -1,4 +1,8 @@
 import { Module, MiddlewareConsumer, RequestMethod } from '@nestjs/common';
+
+// import { StatusMonitorModule } from 'nest-status-monitor';
+// import statusMonitorConfig from './config/statusMonitor';
+
 import { AppController } from './app.controller'
 import { AppService } from './app.service'
 
@@ -10,7 +14,12 @@ import { LinksModule } from './modules/links/links.module'
 import { UserModule } from './modules/user/user.module';
 
 @Module({
-	imports: [LinksModule, UserModule],
+    imports: [
+        // 状态监控
+        // StatusMonitorModule.setUp(statusMonitorConfig),
+        LinksModule,
+        UserModule
+    ],
 	controllers: [AppController],
 	providers: [AppService],
 })
