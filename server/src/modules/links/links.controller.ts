@@ -3,7 +3,7 @@ import {
     Get,
     Post,
     Body,
-    Patch,
+    Put,
     Param,
     Delete,
     Request,
@@ -49,7 +49,7 @@ export class LinksController {
         return this.linksService.findOne(+id);
     }
 
-    @Patch(':id')
+    @Put(':id')
     update(@Param('id') id: string, @Body() updateLinkDto: UpdateLinkDto) {
         return this.linksService.update(+id, updateLinkDto);
     }
